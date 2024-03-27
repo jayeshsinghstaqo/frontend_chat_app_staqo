@@ -1,6 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 import { Button, TextField, Grid, Container } from '@mui/material';
+import toast from "react-hot-toast";
+import useLogin from '@/helpers/hooks/useLogin';
+import { useAuthContext } from '@/contexts/AuthContext';
 
 
 const Login = () => {
@@ -11,7 +14,8 @@ const Login = () => {
         otp: '',
         error: ''
     });
-
+    const { authUser } = useAuthContext()
+    const { loading, login } = useLogin()
     const handleChange = (e) => {
         const { name, value } = e.target;
         setData({
@@ -20,18 +24,21 @@ const Login = () => {
         });
     };
 
-    const loginFun = (e) => {
+    const loginFun = async (e) => {
         e.preventDefault();
-        setData({
-            ...data,
-            error: false
-        })
-        if (!data.mobile_number || data.mobile_number.length !==10) {
+        // setData({
+        //     ...data,
+        //     error: false
+        // })
+        if (!data.mobile_number || data.mobile_number.length !== 10) {
             seterror(true)
-        } else {
+            toast.error("Please provide valid mobile number")
+        }
+        if (data.mobile_number.length == 10) {
             setInputShow(true)
             seterror(false)
         }
+        await login(data.mobile_number, data.otp);
     }
     return (
         <div style={{ backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcDeizwsqRDsaB6UMmO0d2g2372-mO5T64GQ&usqp=CAU)", backgroundSize: 'cover', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -48,7 +55,7 @@ const Login = () => {
                             name="mobile_number"
                             value={data.mobile_number}
                             onChange={handleChange}
-                          
+
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -59,11 +66,16 @@ const Login = () => {
                         /> : true}
                     </Grid>
                     <Grid item xs={12}>
-                    {error ? <h1 style={{ textAlign:"center",marginTop:"20px",color:"red",fontWeight:"bold",fontSize:"20px" }}>Please enter the number</h1> : null}
+                        {error ? <h1 style={{ textAlign: "center", marginTop: "20px", color: "red", fontWeight: "bold", fontSize: "20px" }}>Please enter the number</h1> : null}
                     </Grid>
                     <Grid item xs={12}>
                         <Button variant="contained" type='submit' style={{ width: "100%", backgroundColor: "black", color: "slateblue", fontSize: "30px", fontWeight: "bold", marginTop: "40px", borderRadius: "30px" }}>Login</Button>
                     </Grid>
+                    <div>
+                        <button className='btn btn-block btn-sm mt-2' disabled={loading}>
+                            {loading ? <span className='loading loading-spinner '></span> : "Login"}
+                        </button>
+                    </div>
                 </form>
             </Container>
         </div>
