@@ -59,8 +59,8 @@ setFormData({
   }
   
   return (
-    <div style={{backgroundImage:"url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpeDlxqFzpoiZLCx17cIEU-SptAuJP8ziRw&usqp=CAU)",backgroundSize:"cover",height:"800px"}}>
-      <Container style={{ width: "400px", height: "500px", display: "flex",justifyContent:"center", alignItems: "center",marginTop:"70px" }}>
+    <div style={{backgroundImage:"url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpeDlxqFzpoiZLCx17cIEU-SptAuJP8ziRw&usqp=CAU)",backgroundSize:"cover",height:"650px"}}>
+      <Container style={{ width: "400px", height: "500px", display: "flex",justifyContent:"center", alignItems: "center" }}>
         <div >
           <form style={{boxShadow:"5px 10px 10px 10px skyblue", borderRadius:"10px" ,width:"500px",height:"400px" }} onSubmit={signupFun}>
             <h1 style={{fontSize:"100px",fontWeight:"bold",textAlign:"center"}}>SIGNUP</h1>
@@ -73,8 +73,6 @@ setFormData({
                   name="full_name"
                   value={formData.full_name}
                   onChange={handleChange}
-                 
-
                 />
               </Grid>
               <Grid item xs={12}>

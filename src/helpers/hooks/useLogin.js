@@ -4,7 +4,7 @@ import { useAuthContext } from "@/contexts/AuthContext";
 import { base_url } from "../api/api";
 const useLogin = () => {
 	const [loading, setLoading] = useState(false);
-	const { setAuthUser } = useAuthContext();
+	const { authUser, setAuthUser } = useAuthContext();
 
 	const login = async (mobile_number, otp) => {
 		const success = handleInputErrors(mobile_number, otp);
