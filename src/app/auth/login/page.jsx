@@ -72,9 +72,9 @@ const Login = () => {
                         <Button variant="contained" type='submit' style={{ width: "100%", backgroundColor: "black", color: "slateblue", fontSize: "30px", fontWeight: "bold", marginTop: "40px", borderRadius: "30px" }}>Login</Button>
                     </Grid>
                     <div>
-                        <button className='btn btn-block btn-sm mt-2' disabled={loading}>
-                            {loading ? <span className='loading loading-spinner '></span> : "Login"}
-                        </button>
+                        <div className='btn btn-block btn-sm mt-2' disabled={loading}>
+                            {loading ? <span className='loading loading-spinner '></span> : ""}
+                        </div>
                     </div>
                 </form>
             </Container>

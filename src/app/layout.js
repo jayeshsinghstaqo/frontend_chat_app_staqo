@@ -15,9 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AuthContextProvider>
-          <Toaster>
+          {/* <Toaster> */}
             {children}
-          </Toaster>
+          {/* </Toaster> */}
         </AuthContextProvider>
       </body>
     </html>
