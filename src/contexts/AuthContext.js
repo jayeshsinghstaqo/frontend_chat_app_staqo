@@ -25,7 +25,6 @@ export const AuthContextProvider = ({ children }) => {
     const [authUser, setAuthUser] = useState(null);
 
     useEffect(() => {
-        // Retrieve user from localStorage when the component mounts
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
             try {
