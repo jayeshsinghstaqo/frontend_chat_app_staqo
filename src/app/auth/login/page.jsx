@@ -61,6 +61,8 @@ const Login = () => {
                     <Grid item xs={12} >
                         {inputShow ? <TextField
                             fullWidth
+                            type='text'
+                            name="otp"
                             variant="outlined"
                             value={data.otp}
                         /> : true}

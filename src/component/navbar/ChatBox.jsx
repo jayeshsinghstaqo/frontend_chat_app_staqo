@@ -2,7 +2,7 @@
 import { Button, Container, Input } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useState } from 'react';
-
+import { teal, red, green } from '@mui/material/colors';
 const ChatBox = () => {
     const [inputText, setInputText] = useState('');
     const [chatContent, setChatContent] = useState([]);
@@ -26,30 +26,32 @@ const ChatBox = () => {
     }
     return (
         <div style={{ display: 'flex', flexDirection: 'column', position: "relative", gap: '10px' }}>
-            <Container sx={{ border: 'solid 2px black', overflowY: 'auto', position: "relative", height: '30rem', paddingBottom: '5px' }}>
+            <Container sx={{ border: 'solid 2px 2px 2px black', overflowY: 'auto', position: "relative", height: '35rem',backgroundImage:"url(https://t3.ftcdn.net/jpg/01/99/79/88/360_F_199798806_PAFfWGapie6Mk8igqKHbhIIa9LwQcvQr.jpg)", paddingBottom: '5px' }}>
                 {chatContent.map((message, index) => (
-                    <div key={index} style={{ margin: '5px', padding: '10px', backgroundColor: '#f0f0f0' }}>{message}</div>
+                    <div key={index} style={{ margin: '5px', padding: '10px', backgroundColor: '#f0f0f0',width:"400px",borderRadius:"20px" }}>{message}</div>
                 ))}
 
             </Container>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '10%', position: "static", border: '2px solid black' }}>
-                <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'space-around', position: "absolute", Bottom: "0px" }}>
-                    <Input
+            <div style={{ display: 'flex', flexDirection: 'column',justifyContent:"flex-end", height: '10%', position: "static" }}>
+                <div style={{ textAlign: 'center', display: 'flex',  position: "absolute", margin: "10px",backgroundColor:green[100] }}>
+                    <input
                         placeholder='write here...'
-                        style={{ width: "660px" }}
+                        style={{ width: "750px" ,border:"  2px grey solid" ,borderRadius:"20px 0px 0px 20px"}}
                         value={inputText}
                         onChange={handleInputChange}
                         onKeyDown={clickPress}
+                
+                        
+                        
                     />
                     <Button
-                        style={{ fontWeight: 'bold', color: "black" }}
+                        style={{ fontWeight: 'bold', backgroundColor: teal[500] ,borderRadius:"0px 20px 20px 0px"}}
                         variant="contained"
 
                         onClick={handleButtonClick}
                     >
                         <ArrowForwardIosIcon />
-                        <arr style={{ fontSize: "30px", color: "black" }} />
-                    </Button>
+                        </Button>
                 </div>
             </div>
         </div>
