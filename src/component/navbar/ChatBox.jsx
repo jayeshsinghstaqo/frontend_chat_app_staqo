@@ -2,7 +2,7 @@
 import { Button, Container, Input } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import React, { useState } from 'react';
-import { teal, red, green } from '@mui/material/colors';
+import { teal, red, green ,grey} from '@mui/material/colors';
 const ChatBox = () => {
     const [inputText, setInputText] = useState('');
     const [chatContent, setChatContent] = useState([]);
@@ -16,13 +16,16 @@ const ChatBox = () => {
             setChatContent([...chatContent, inputText]);
             setInputText('');
         }
-    };
+        };
 
     function clickPress(e) {
         if (e.key == "Enter") {
+            if(inputText){
             setChatContent([...chatContent, inputText]);
             setInputText('');
         }
+    }
+
     }
     return (
         <div style={{ display: 'flex', flexDirection: 'column', position: "relative", gap: '10px' }}>
@@ -36,7 +39,7 @@ const ChatBox = () => {
                 <div style={{ textAlign: 'center', display: 'flex',  position: "absolute", margin: "10px",backgroundColor:green[100] }}>
                     <input
                         placeholder='write here...'
-                        style={{ width: "750px" ,border:"  2px grey solid" ,borderRadius:"20px 0px 0px 20px"}}
+                        style={{ width: "750px" , border:"  2px grey solid" ,borderRadius:"20px 0px 0px 20px",paddingLeft:"20px"}}
                         value={inputText}
                         onChange={handleInputChange}
                         onKeyDown={clickPress}
@@ -45,7 +48,7 @@ const ChatBox = () => {
                         
                     />
                     <Button
-                        style={{ fontWeight: 'bold', backgroundColor: teal[500] ,borderRadius:"0px 20px 20px 0px"}}
+                        style={{ fontWeight: 'bold' ,borderRadius:"0px 20px 20px 0px" ,backgroundColor:grey[500]}}
                         variant="contained"
 
                         onClick={handleButtonClick}

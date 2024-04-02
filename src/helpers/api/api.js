@@ -1,1 +1,1 @@
-exports.base_url = 'http://localhost:9090'
+exports.base_url = 'https://backend-chat-app-staqo.onrender.com'

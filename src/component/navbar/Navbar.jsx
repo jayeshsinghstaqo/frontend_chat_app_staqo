@@ -1,37 +1,30 @@
 'use client'
 import React, { useState } from 'react';
-import { Container, TextField } from '@mui/material';
+import { Button, Container, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { teal, grey } from '@mui/material/colors';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import AddchartIcon from '@mui/icons-material/Addchart';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 
 const Navbar = () => {
-    const [showInput, setShowInput] = useState(false);
-     
-    const handleClick = () => {
-        setShowInput(true);
-    }
+    // const [showInput, setShowInput] = useState(false);
+
+
 
     return (
-        <Container style={{ width: "100%", height: "70px", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: teal[500], borderLeft: "solid 1px grey" }}> 
-            <h3 style={{fontSize:"20px",display:"flex",fontStyle:"italic"}}>ChatApp</h3>
-            <div style={{ position: 'relative' }}>
-                {!showInput && (
-                    <SearchIcon 
-                        onClick={handleClick} 
-                        style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', right: '10px', cursor: 'pointer' }} 
-                    />
-                )}
-                {showInput && (
-                    <TextField 
-                        autoFocus 
-                        variant="outlined" 
-                        placeholder="Search..." 
-                        InputProps={{ startAdornment: <SearchIcon /> }} 
-                        onBlur={() => setShowInput(false)} 
-                        style={{ width: '250px',  borderRadius: "20px", borderColor: grey[500] }} 
-                    />
-                )}
+        <Container style={{ width: "100%", height: "70px", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: grey[500], borderLeft: "solid 1px grey", borderRadius: "10px 0px 0px 10px" }}>
+
+            <div><div ><AccountCircleTwoToneIcon style={{ width: "40px", height: "40px",border:'2px solid green',borderRadius:'50px' }} /></div>
+
             </div>
+            <div style={{ display: 'flex', gap: "20px" }}><div><AddchartIcon style={{ width: "40px", height: "30px", color: "white" }} /></div>
+                <div><Diversity3Icon style={{ width: "40px", height: "30px", color: "black", color: "white" }} /></div>
+                <div><MoreVertIcon style={{ color: "white" }} /></div>
+            </div>
+
         </Container>
     );
 }
