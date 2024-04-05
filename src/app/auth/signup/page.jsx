@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { Button, TextField, Grid, Container, FormControlLabel, Checkbox } from '@mui/material';
 // import { blue } from '@mui/material/colors';
+import { useAuthContext } from '@/contexts/AuthContext';
+import { base_url } from '@/helpers/api/api';
+
 
 const Signup = () => {
   const [error, seterror] = useState(false);
@@ -15,6 +18,8 @@ const Signup = () => {
       transe_gender: false
     }
   });
+      const { authUser } = useAuthContext();
+
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
@@ -79,19 +84,13 @@ const Signup = () => {
             style={{ marginBottom: "20px" }}
           />
           <Grid container spacing={2}>
-            <Grid item xs={3}>
+            <Grid item xs={6}>
               <FormControlLabel
                 control={<Checkbox checked={formData.gender.male} onChange={handleCheckboxChange} name="male" />}
                 label="Male"
               />
             </Grid>
-            <Grid item xs={5}>
-              <FormControlLabel
-                control={<Checkbox checked={formData.gender.transe_gender} onChange={handleCheckboxChange} name="transe_gender" />}
-                label="Transgender"
-              />
-            </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
               <FormControlLabel
                 control={<Checkbox checked={formData.gender.female} onChange={handleCheckboxChange} name="female" />}
                 label="Female"
