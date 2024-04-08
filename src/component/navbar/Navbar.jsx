@@ -15,14 +15,14 @@ const Navbar = () => {
 
 
     return (
-        <Container style={{ width: "100%", height: "70px", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: grey[500], borderLeft: "solid 1px grey", borderRadius: "10px 0px 0px 10px" }}>
+        <Container style={{ width: "100%", height: "70px", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: grey[200], borderLeft: "solid 1px grey"}}>
 
-            <div><div >< AccountCircleTwoToneIcon style={{ width: "40px", height: "40px",border:'2px solid green',borderRadius:'50px' }} /></div>
+            <div><div >< AccountCircleTwoToneIcon style={{  color:"grey",width: "40px", height: "40px",border:'2px solid green',borderRadius:'50px' }} /></div>
 
             </div>
-            <div style={{ display: 'flex', gap: "20px" }}><div><AddchartIcon style={{ width: "40px", height: "30px", color: "white" }} /></div>
-                <div><Diversity3Icon style={{ width: "40px", height: "30px", color: "black", color: "white" }} /></div>
-                <div><MoreVertIcon style={{ color: "white" }} /></div>
+            <div style={{ display: 'flex', gap: "20px" }}><div><AddchartIcon style={{ width: "40px", height: "30px", color: "grey" }} /></div>
+                <div><Diversity3Icon style={{ width: "40px", height: "30px", color: "grey" }} /></div>
+                <div><MoreVertIcon style={{ color: "grey" }} /></div>
             </div>
 
         </Container>

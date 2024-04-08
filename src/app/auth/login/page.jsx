@@ -18,7 +18,7 @@ const Login = () => {
         otp: '',
         error: ''
     });
-    const { authUser, setAuthUser } = useAuthContext();
+    const {  setAuthUser } = useAuthContext();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,15 +40,17 @@ const Login = () => {
                 console.log(res, 'this is response of validate otp')
 
                 if (res.status === 200) {
-                    if (is_profile_complete == false) {
-                        router.push('/auth/signup')
-                    } else {
-                        router.push('/')
-                    }
-                    setData({
+                     setAuthUser(res.data)
+                     setData({
                         ...data,
                         error: ""
                     })
+                    localStorage.setItem("user",JSON.stringify(res.data))
+                    if(res.data.is_profile_complete === false ){
+                        router.push('/auth/signup')
+                    } else{
+                        router.push('/')
+                    }
                 }
                 
 

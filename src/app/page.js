@@ -16,7 +16,7 @@ const Home = () => {
         <Navbar/>
         </Box>
         
-        <Box sx={{  display: 'flex', flexDirection: 'column', height: '100%', backgroundColor:grey[200]}}>
+        <Box sx={{  display: 'flex', flexDirection: 'column', height: '100%', backgroundColor:grey[100]}}>
           
           <MainContent/>
         </Box>

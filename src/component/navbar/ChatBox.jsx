@@ -36,10 +36,10 @@ const ChatBox = () => {
 
             </Container>
             <div style={{ display: 'flex', flexDirection: 'column',justifyContent:"flex-end", height: '10%', position: "static" }}>
-                <div style={{ textAlign: 'center', display: 'flex',  position: "absolute", margin: "10px",backgroundColor:green[100] }}>
+                <div style={{ textAlign: 'center', display: 'flex',  position: "absolute", margin: "10px" }}>
                     <input
                         placeholder='write here...'
-                        style={{ width: "750px" , border:"  2px grey solid" ,borderRadius:"20px 0px 0px 20px",paddingLeft:"20px"}}
+                        style={{ width: "750px" , border:"  2px grey solid" ,borderRadius:"20px",paddingLeft:"20px"}}
                         value={inputText}
                         onChange={handleInputChange}
                         onKeyDown={clickPress}
@@ -48,12 +48,12 @@ const ChatBox = () => {
                         
                     />
                     <Button
-                        style={{ fontWeight: 'bold' ,borderRadius:"0px 20px 20px 0px" ,backgroundColor:grey[500]}}
+                        style={{ fontWeight: 'bold',marginLeft:"20px"  ,backgroundColor:grey[400]}}
                         variant="contained"
 
                         onClick={handleButtonClick}
                     >
-                        <ArrowForwardIosIcon />
+                        <ArrowForwardIosIcon style={{color:"black" ,fontWeight:"bold"}} />
                         </Button>
                 </div>
             </div>
